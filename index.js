@@ -26,7 +26,7 @@ async function run() {
     console.log('Successfully connected to MongoDB!');
 
     app.get('/', (req, res) => {
-      res.send('Task Master Server');
+      res.send('Welcome to Task Master Server');
     });
 
     app.get('/tasks', async (req, res) => {
@@ -56,7 +56,7 @@ async function run() {
 
       try {
         const result = await tasksCollection.deleteOne({
-          _id: ObjectId(taskId),
+          _id: new ObjectId(taskId),
         });
         if (result.deletedCount === 0) {
           res.status(404).json({ error: 'Task not found' });
@@ -95,5 +95,5 @@ async function run() {
 run().catch(console.dir);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port: ${port}`);
 });
