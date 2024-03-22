@@ -17,7 +17,7 @@ const client = new MongoClient(uri, {
 	},
 });
 
-async function run() {
+const run = async () => {
 	try {
 		await client.connect();
 		const db = await client.db("taskmaster");
