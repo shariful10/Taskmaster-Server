@@ -9,8 +9,8 @@
 	"routes": [
 		{
 			"src": "/(.*)",
-			"methods": ["GET", "DELETE", "PATCH", "POST"],
-			"dest": "/"
+			"dest": "/",
+			"methods": ["GET", "DELETE", "PATCH", "POST"]
 		}
 	]
 }
